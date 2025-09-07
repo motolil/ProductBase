@@ -4,4 +4,4 @@
 
 Система сборки Maven
 
-Запуск возможен через терминал mvn clear javafx:run
+Запуск возможен через терминал mvn clean javafx:run
