@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Визуальная составляющая на JavaFX -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="by.htc.controller.ProductController"
+            prefHeight="605.0" prefWidth="850.0">
+
+    <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0"
+          AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+
+        <!-- Таблица -->
+        <TableView fx:id="productTable"  prefWidth="850"  prefHeight="605.0">
+            <columns>
+                <TableColumn text="Код" fx:id="codeColumn"/>
+                <TableColumn text="Имя" fx:id="nameColumn"/>
+                <TableColumn text="Штрихкод" fx:id="barCodeColumn"/>
+                <TableColumn text="Цена" fx:id="priceColumn"/>
+                <TableColumn text="Количество" fx:id="quantityColumn"/>
+                <TableColumn text="Модель" fx:id="modelColumn"/>
+                <TableColumn text="Сорт" fx:id="sortColumn"/>
+                <TableColumn text="Цвет" fx:id="colorColumn"/>
+                <TableColumn text="Размер" fx:id="sizeColumn"/>
+                <TableColumn text="Вес" fx:id="weightColumn"/>
+                <TableColumn text="Дата изм." fx:id="dateChangesColumn"/>
+            </columns>
+        </TableView>
+
+        <!-- Панель с кнопками -->
+        <HBox spacing="10">
+            <TextField fx:id="searchField" promptText="Поиск..." HBox.hgrow="ALWAYS"/>
+            <Button text="Поиск" onAction="#onSearch"/>
+            <Button text="Добавить" onAction="#onAddProduct"/>
+            <Button text="Редактировать" onAction="#onEditProduct"/>
+            <Button text="Удалить" onAction="#onDeleteProduct"/>
+        </HBox>
+
+        <!-- Панель, появляющаяся при редактировании(добавлении товара) -->
+        <GridPane fx:id="formPane"
+                  visible="false" managed="false"
+                  hgap="10" vgap="10"
+                  style="-fx-background-color: #f4f4f4; -fx-border-color: #ccc; -fx-border-radius: 5;">
+
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Код:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="codeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Имя:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="nameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Штрихкод:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="barCodeField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Цена:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="priceField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Количество:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="quantityField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Модель:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="modelField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Сорт:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="sortField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Цвет:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextField fx:id="colorField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+            <Label text="Размер:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <TextField fx:id="sizeField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            <Label text="Вес:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <TextField fx:id="weightField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+            <Button text="Отмена" onAction="#onCancelForm" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+            <Button text="Сохранить" onAction="#onSaveProduct" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+        </GridPane>
+
+    </VBox>
+
+</AnchorPane>
+
+
